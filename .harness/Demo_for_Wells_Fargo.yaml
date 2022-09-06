@@ -1,0 +1,30 @@
+pipeline:
+  name: Demo for Wells Fargo
+  identifier: Demo_for_Wells_Fargo
+  projectIdentifier: GitX_Demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Echo
+        identifier: Echo
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Echo
+                  identifier: Echo
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "Hello from Main branch"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
