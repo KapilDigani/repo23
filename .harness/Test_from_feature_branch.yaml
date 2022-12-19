@@ -1,0 +1,30 @@
+pipeline:
+  name: Test from feature branch
+  identifier: Test_from_feature_branch
+  projectIdentifier: KD_Git_Ex
+  orgIdentifier: KD
+  tags: {}
+  stages:
+    - stage:
+        name: Custom
+        identifier: Custom
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Echo
+                  identifier: Echo
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "Hello from feature branch"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
